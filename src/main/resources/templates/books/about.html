@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security"
+      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout"
+      lang="en">
+<body>
+<section layout:fragment="content">
+    <h1>Hi <span th:text="${username}">Username</span></h1>
+    Logged user:<span sec:authentication="name"> Name</span>
+    Roles: <span sec:authorize="isAuthenticated()" sec:authentication="principal.authorities"> Roles...</span>
+    <p>0 nas</p>
+</section>
+</body>
+
+</html>
